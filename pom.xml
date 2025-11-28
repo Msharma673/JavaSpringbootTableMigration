@@ -114,6 +114,22 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/springboot_crud_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC</url>
+					<user>root</user>
+					<password>Macbook@1630</password>
+					<locations>
+						<location>classpath:db/migration/tables</location>
+						<location>classpath:db/migration/seed</location>
+						<location>classpath:db/migration/alter</location>
+					</locations>
+					<baselineOnMigrate>true</baselineOnMigrate>
+					<cleanDisabled>false</cleanDisabled>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
